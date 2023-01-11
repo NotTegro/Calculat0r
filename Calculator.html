@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+</head>
+
+<style>
+
+body {
+
+width: 100%;
+height: auto;
+background-color: black;
+position: fixed;
+
+}
+
+::placeholder {
+  color: green;
+  opacity: 1;
+text-align: center;
+}
+
+</style>
+
+<body>
+
+
+
+<input id="calcId" style="font-size: 400%; width: 92%; background-color: black; color: lime; border-color: lime; border-width: 5px" type="text" placeholder="Input">
+
+
+<center>
+<button id="buttonId" style="font-size: 400%; background-color: black; color: lime; border-color: lime; border-width: 5px" onclick="Enter()">Enter</button>
+</center>
+
+<p id="textId" style="font-size: 400%; color: lime; overflow-wrap: break-word"></p>
+
+
+
+
+
+</body>
+
+<script>
+
+var text = document.getElementById("textId")
+
+var calculate = document.getElementById("calcId")
+
+var one = "Account_Activated"
+var two = "Intizialing_Protocol:"
+var three = "Loading_System:"
+
+
+var oneAr = Array.from(one.split(""))
+var twoAr = Array.from(two.split(""))
+var threeAr = Array.from(three.split(""))
+
+var sound = new Audio("HackSound.mp3")
+
+
+async function Enter() {
+
+text.innerText = eval(calculate.value)
+
+totalNum = eval(calculate.value)
+
+
+if (totalNum == "101") {
+text.innerText = ""
+
+var sound = new Audio("HackSound.mp3")
+
+sound.play()
+sound.loop = true
+}
+
+
+
+for (var i=0; i < oneAr.length; i++) {
+
+if (totalNum == "101") {
+
+
+
+text.innerText += oneAr[i]
+
+await new Promise(resolve => setTimeout(resolve, 50));
+
+
+
+
+if (i==16) {
+
+await new Promise(resolve => setTimeout(resolve, 500));
+
+text.innerText += "\n"
+
+for (var j=0; j < twoAr.length; j++) {
+
+
+
+text.innerText += twoAr[j]
+
+await new Promise(resolve => setTimeout(resolve, 50));
+
+
+if (j == 20) {
+
+
+
+for (var k=0; k < 101; k++) {
+
+text.innerText = "Account_Activated \n Intizialing_Protocol: " + k + "%"
+
+await new Promise(resolve => setTimeout(resolve, 25));
+
+if (k==100) {
+
+text.innerText += " Done"
+
+await new Promise(resolve => setTimeout(resolve, 1000));
+
+text.innerText = "Account_Activated \n Intizialing_Protocol: 100% Done \n"
+
+
+
+
+for (var l = 0; l < threeAr.length; l++) {
+
+if (totalNum == "101") {
+
+text.innerText += threeAr[l]
+
+await new Promise(resolve => setTimeout(resolve, 50));
+
+
+
+if (l == 14) {
+
+for (var m = 0; m < 101; m++) {
+
+if (totalNum == "101") {
+
+text.innerText = "Account_Activated \n Intizialing_Protocol: 100% Done \n Loading_System: " + m + "%"
+
+await new Promise(resolve => setTimeout(resolve, 25));
+
+
+
+if (m==100) {
+
+text.innerText += " Done"
+
+await new Promise(resolve => setTimeout(resolve, 1000));
+
+text.innerText = ""
+
+
+
+
+
+}
+
+
+
+
+}
+
+}
+
+
+
+}
+
+
+
+}
+
+
+
+}
+
+}
+
+
+}
+
+}
+
+
+}
+
+}
+
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+}
+
+
+document.getElementById("calcId")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("buttonId").click();
+    }
+});
+
+</script>
+
+</html>
